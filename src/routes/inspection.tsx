@@ -1,0 +1,8 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { ArrowLink, CheckList, InfoPanel, PageIntro, PageShell } from "@/components/site";
+import inspector from "@/assets/digitech-inspector.jpg";
+
+export const Route = createFileRoute("/inspection")({ head: () => ({ meta: [
+  { title: "Vehicle Inspection — Digi-Tech" },{ name: "description", content: "Digi-Tech pre-purchase vehicle inspection in Dubai." },{ property: "og:title", content: "Vehicle Inspection — Digi-Tech" },{ property: "og:description", content: "A detailed independent inspection before you buy." },{ property: "og:type", content: "website" },{ name: "twitter:card", content: "summary_large_image" },
+]}), component: InspectionPage });
+function InspectionPage(){return <PageShell><PageIntro eyebrow="Pre-purchase vehicle inspection" title="Inspect first." accent="Decide clearly." copy="A detailed independent inspection at the seller’s location in Dubai."/><section className="editorial-grid"><div className="image-panel panel"><img src={inspector} alt="Inspector checking an engine bay" width={1024} height={1024}/></div><InfoPanel eyebrow="Comprehensive inspection" title="450+ points." accent="One clear report." copy="Core vehicle systems, condition and visible evidence are checked and documented."><CheckList items={["Engine and transmission","Body and paint","Suspension and brakes","Electrical systems","Interior condition","Road test"]}/><ArrowLink to="/contact">Book Inspection</ArrowLink></InfoPanel></section></PageShell>}
